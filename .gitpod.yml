@@ -4,9 +4,4 @@ ports:
 - port: 3000
 tasks:
 - name: Terminal
-  command: >
-  echo "";
-  echo "Usage: mecab -d /usr/lib/mecab/dic/mecab-ipadic-neologd";
-- name: MeCab
-  init: mecab -d /usr/lib/mecab/dic/mecab-ipadic-neologd
-  
+  command: echo "Usage: mecab -d /usr/lib/mecab/dic/mecab-ipadic-neologd";
