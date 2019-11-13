@@ -17,4 +17,6 @@ RUN apt-get update \
 RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git \
  && cd mecab-ipadic-neologd \
  && bin/install-mecab-ipadic-neologd -n -y
- 
+
+# create Symbolic link '/usr/lib/mecab/dic'
+RUN ln -s /usr/lib/x86_64-linux-gnu/mecab/dic /usr/lib/mecab/dic
