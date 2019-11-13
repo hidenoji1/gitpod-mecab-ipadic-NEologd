@@ -1,0 +1,1 @@
+# gitpod-mecab-ipadic-NEologd
