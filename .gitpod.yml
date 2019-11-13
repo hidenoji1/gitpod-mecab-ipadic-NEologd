@@ -5,5 +5,5 @@ ports:
 tasks:
 - name: MeCab
   command: >
-    echo "* Usage:"
+    echo "* Usage:";
     echo "* mecab -d /usr/lib/mecab/dic/mecab-ipadic-neologd";
