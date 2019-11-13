@@ -3,5 +3,7 @@ image:
 ports:
 - port: 3000
 tasks:
-- name: Terminal
-  command: echo "Usage: mecab -d /usr/lib/mecab/dic/mecab-ipadic-neologd";
+- name: MeCab
+  command: >
+    echo "* Usage:"
+    echo "* mecab -d /usr/lib/mecab/dic/mecab-ipadic-neologd";
