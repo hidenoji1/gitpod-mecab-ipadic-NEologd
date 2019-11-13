@@ -1,12 +1,16 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-full:latest
 
 USER root
 
-# Install custom tools, runtime, etc. using apt-get
-# For example, the command below would install "bastet" - a command line tetris clone:
-#
-# RUN apt-get update \
-#    && apt-get install -y bastet \
-#    && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
-#
-# More information: https://www.gitpod.io/docs/42_config_docker/
+# install Mecab, MeCab-lib, Mecab-ipadic
+RUN apt-get update \
+ && apt-get install -y mecab \
+ && apt-get install -y libmecab-dev \
+ && apt-get install -y mecab-ipadic-utf8 \
+ && apt-get install -y xz-utils \
+
+# install MeCab-ipadic-NEologd
+RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git \
+ && cd mecab-ipadic-neologd \
+ && bin/install-mecab-ipadic-neologd -n -y
+ 
